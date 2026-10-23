@@ -22,8 +22,17 @@ def row_max(matrix):
     return max_row_value
     pass
 
-# Step 3 - row_sum (not yet solved)
-# TODO: implement
+# Step 3 - row_sum
+import numpy as np
+
+def row_sum(matrix):
+    """Return per-row sums of a 2D array with shape (N, 1)."""
+    # TODO: return the sum along axis 1 keeping the reduced dimension
+    a = np.sum(matrix,axis=1,keepdims=True)
+    return a
+    pass
+
+# Alternate way -     return np.sum(matrix, axis=1).reshape(-1, 1).tolist()
 
 # Step 4 - exp_shifted (not yet solved)
 # TODO: implement
