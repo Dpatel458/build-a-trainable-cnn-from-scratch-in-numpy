@@ -40,7 +40,7 @@ import numpy as np
 def exp_shifted(logits):
     """Subtract per-row max from logits and exponentiate elementwise."""
     # TODO: shift each row of logits by its max and return elementwise exp
-    a = np.max(logits,axis=1,keepdims=True)
+    a = row_max(logits)
     c = logits - a
     return np.exp(c)
     pass
