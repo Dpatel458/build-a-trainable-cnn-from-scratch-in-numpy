@@ -55,8 +55,15 @@ def stable_softmax(logits):
     return all_logits / denominator
     pass
 
-# Step 6 - one_hot (not yet solved)
-# TODO: implement
+# Step 6 - one_hot
+def one_hot(labels, num_classes):
+    # TODO: convert integer labels into a (N, num_classes) one-hot float matrix
+    result = np.zeros((len(labels),num_classes),dtype=float)
+    for i, label in enumerate(labels):
+        result[i,label] = 1.0
+
+    return result
+    pass
 
 # Step 7 - gather_true_class_probs (not yet solved)
 # TODO: implement
