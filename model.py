@@ -99,8 +99,13 @@ def accuracy(logits_or_probs, labels):
     return correct / len(labels)
     pass
 
-# Step 10 - he_std (not yet solved)
-# TODO: implement
+# Step 10 - he_std
+import numpy as np
+def he_std(fan_in):
+    # TODO: return the He initialization standard deviation sqrt(2 / fan_in).
+    dev = np.sqrt(2 / fan_in)
+    return dev
+    pass
 
 # Step 11 - he_init (not yet solved)
 # TODO: implement
