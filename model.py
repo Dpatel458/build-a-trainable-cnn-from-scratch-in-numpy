@@ -107,8 +107,15 @@ def he_std(fan_in):
     return dev
     pass
 
-# Step 11 - he_init (not yet solved)
-# TODO: implement
+# Step 11 - he_init
+import numpy as np
+def he_init(shape, fan_in, seed):
+    # TODO: sample a weight tensor from a normal distribution scaled by He std using the seed.
+    np.random.seed(seed)
+    he_std2 = he_std(fan_in)
+    W = np.random.normal(loc=0.0, scale=he_std2, size=shape)
+    return W
+    pass
 
 # Step 12 - init_zero_bias (not yet solved)
 # TODO: implement
