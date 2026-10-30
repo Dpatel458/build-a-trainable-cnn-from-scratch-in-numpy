@@ -140,8 +140,13 @@ def pad_2d(images, pad):
     # The padding argument `((0, 0), (0, 0), (pad, pad), (pad, pad))` contains four pairs because the input is a 4D array with dimensions `(N, C, H, W)`. The first pair `(0, 0)` ensures that the batch dimension remains unchanged, while the second pair `(0, 0)` keeps the channel dimension unchanged. The third pair `(pad, pad)` adds `pad` rows above and below the image, and the fourth pair `(pad, pad)` adds `pad` columns on the left and right. Each pair represents the amount of padding before and after its corresponding dimension.
     # The second argument is 'pad_width' which also allows which dimension to pad and like (pad,pad) --> (before_pad,after_pad) so for any row or column it will be before row/col. and after row/col.
 
-# Step 14 - output_spatial_size (not yet solved)
-# TODO: implement
+# Step 14 - output_spatial_size
+def output_spatial_size(input_size, kernel, stride, padding):
+    # TODO: return the conv/pool output spatial dimension from input_size, kernel, stride, padding
+    # output = ( [input + 2*pad - kernel_size] / stride ) + 1
+    output = ( (input_size + 2*padding - kernel) / stride ) + 1
+    return int(output)
+    pass
 
 # Step 15 - im2col (not yet solved)
 # TODO: implement
